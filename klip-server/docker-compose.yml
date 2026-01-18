@@ -1,0 +1,12 @@
+services:
+  klip:
+    build: .
+    container_name: klip-server
+    restart: unless-stopped
+    environment:
+      DOWNLOAD_URL: 'https://klip.bidbattles.nl/download'
+    volumes:
+      - ./clips:/app/clips
+    ports:
+      #- "127.0.0.1:${PORT:-3000}:3000"
+      - "${PORT:-3000}:3000"
