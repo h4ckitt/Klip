@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Klip",
+  "version": "1.0",
+  "description": "Send articles to KOReader on your Kindle",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus"
+
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

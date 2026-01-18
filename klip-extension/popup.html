@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 320px; padding: 15px; font-family: -apple-system, sans-serif; color: #333; }
+    h2 { margin: 0 0 15px 0; font-size: 18px; display: flex; align-items: center; justify-content: space-between; }
+
+    .btn {
+      display: block; width: 100%; padding: 12px; margin-bottom: 10px;
+      border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn-epub { background-color: #fbf0d9; color: #3b2e1e; border: 1px solid #3b2e1e; }
+    .btn-pdf { background-color: #3b2e1e; color: #fff; }
+
+    .config-area { margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
+    .hidden { display: none !important; }
+
+    input, select {
+      width: 100%; padding: 8px; margin-bottom: 12px; box-sizing: border-box;
+      border: 1px solid #ccc; border-radius: 4px; font-size: 13px;
+      background: #fff;
+    }
+
+    label { font-size: 11px; font-weight: bold; text-transform: uppercase; color: #666; display: block; margin-bottom: 4px; }
+
+    #status { font-size: 13px; text-align: center; margin-top: 10px; color: #666; min-height: 18px; }
+
+    .settings-icon {
+      cursor: pointer; opacity: 0.6; font-size: 16px; padding: 5px; border-radius: 50%;
+    }
+    .settings-icon:hover { background: #eee; opacity: 1; }
+  </style>
+</head>
+<body>
+<h2>
+  <span>Klip to Kindle</span>
+  <span id="settings-btn" class="settings-icon" title="Settings">&#x2699;&#xFE0F;</span>
+</h2>
+
+<div id="main-view">
+  <button id="btn-epub" class="btn btn-epub">Klip as EPUB</button>
+  <button id="btn-pdf" class="btn btn-pdf">Klip as PDF</button>
+  <div id="status">Ready</div>
+</div>
+
+<div id="config-view" class="config-area hidden">
+  <label>Server URL</label>
+  <input type="text" id="server-url" placeholder="http://192.168.1.X:3000">
+
+  <label>Processing Mode</label>
+  <select id="mode-select">
+    <option value="fast">Fast (Standard)</option>
+    <option value="best_effort">Best Effort (Slow / Heavy Sites)</option>
+  </select>
+
+  <button id="save-config" class="btn" style="background: #eee;">Save Settings</button>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
